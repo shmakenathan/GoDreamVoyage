@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum Currency: CaseIterable{
+enum Currency: CaseIterable {
     case DollarUS
     case DollarAUS
     case DollarC
@@ -32,16 +32,16 @@ enum Currency: CaseIterable{
     }
     
     var initial : String {
-           switch self {
-           case .DollarUS: return "USD"
-           case .DollarAUS: return "AUD"
-           case .DollarC: return "CAD"
-           case .Euro: return "EUR"
-           case .FrancS: return "CHF"
-           case .LivreS: return "GBP"
-           case .Yenj: return "JPY"
-           case .Yuan: return "CNY"
-           }
-       }
+        switch self {
+        case .DollarUS: return "USD"
+        case .DollarAUS: return "AUD"
+        case .DollarC: return "CAD"
+        case .Euro: return "EUR"
+        case .FrancS: return "CHF"
+        case .LivreS: return "GBP"
+        case .Yenj: return "JPY"
+        case .Yuan: return "CNY"
+        }
+    }
 }
 

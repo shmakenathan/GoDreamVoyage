@@ -38,7 +38,7 @@ extension LanguageListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
 
-        cell.textLabel?.text = Language.French.title
+        cell.textLabel?.text = Language.allCases[indexPath.row].title
         return cell
     }
 }
@@ -49,7 +49,7 @@ extension LanguageListViewController: UITableViewDelegate {
         
         
         
-        let selectedLanguage = Language.Arabic
+        let selectedLanguage = Language.allCases[indexPath.row]
         
         isSourceLanguageSelection ?
             delegate?.didSelectSourceLanguage(language: selectedLanguage) :

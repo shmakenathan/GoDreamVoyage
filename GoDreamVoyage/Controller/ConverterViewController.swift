@@ -27,9 +27,11 @@ class ConverterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         let myPickerSource = UIPickerView()
         myPickerSource.delegate = self
         sourceCurrency.inputView = myPickerSource
+        
         let myPickerTarget = UIPickerView()
         myPickerTarget.delegate = self
         targetCurrency.inputView = myPickerTarget
@@ -42,44 +44,45 @@ class ConverterViewController: UIViewController {
         for i in tab2 {
             for (cle, valeur) in tab1 where i == cle {
                 tab[cle] = valeur
-        }
+            }
             tab.removeValue(forKey: "")
-    }
-        return tab
-}
-
-
-
-override func viewDidAppear(_ animated: Bool) {
-    super.viewDidAppear(animated)
-    
-    
-}
-
-
-
-func handleCurrencyResultResponse(result: Result<LatestCurrencyResult, NetworkManagerError>) {
-    
-    DispatchQueue.main.async {
-        switch result {
-        case .failure(let error):
-            print("error occured \(error.localizedDescription)")
-            self.sourceCurrency.text = error.localizedDescription
-        case .success(let latestCurrencyResult):
-       
-            self.rates = latestCurrencyResult.rates
-            /*  self.ratescurr = self.createTab()
-            self.rates = self.createe(tab1: self.rates, tab2: self.ratescurr)*/
-            
         }
+        return tab
+    }
+    
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
         
     }
-}
-
+    
+    
+    
+    func handleCurrencyResultResponse(result: Result<LatestCurrencyResult, NetworkManagerError>) {
+        
+        DispatchQueue.main.async {
+            switch result {
+            case .failure(let error):
+                print("error occured \(error.localizedDescription)")
+                self.sourceCurrency.text = error.localizedDescription
+            case .success(let latestCurrencyResult):
+                
+                self.rates = latestCurrencyResult.rates
+                /*  self.ratescurr = self.createTab()
+                 self.rates = self.createe(tab1: self.rates, tab2: self.ratescurr)*/
+                
+            }
+            
+        }
+    }
+    
 }
 extension ConverterViewController: UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return Currency.Euro.title
+        return Currency.allCases[row].title
+        
     }
 }
 extension ConverterViewController: UIPickerViewDataSource {
