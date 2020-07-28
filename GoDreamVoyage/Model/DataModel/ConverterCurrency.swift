@@ -7,35 +7,30 @@
 //
 
 import Foundation
-protocol ConverterDelegate: AnyObject {
-}
 
-class Converter {
+
+class ConverterCurrency {
     
-    private weak var delegate: ConverterDelegate?
     
-    init(delegate: ConverterDelegate? = nil) {
-        self.delegate = delegate
-    }
     
    
         
-    func convert(sommeToChange: String, currencyBase: String, currencyReturn: String, rates: [String: Double]) -> Double {
+    func convert(sommeToChange: String, currencyBase: String, currencyReturn: String, rates: [String: Double]) -> String {
         var result = 0.0
-        if currencyBase != Currency.Euro.title {
+        if currencyBase != Currency.Euro.initial {
             guard let double = Double(sommeToChange), let doubleRatesBase = rates[currencyBase], let doubleRatesTarget = rates[currencyReturn] else {
-                return 0
+                return "erreur"
             }
             let newSommeCurrencyBase = double / doubleRatesBase
             result = newSommeCurrencyBase * doubleRatesTarget
         }
         else {
             guard let double = Double(sommeToChange), let doubleRatesTarget = rates[currencyReturn] else {
-                return 0
+                return "erreur"
             }
             result = double * doubleRatesTarget
         }
-        return result
+        return String(result)
     }
     
     

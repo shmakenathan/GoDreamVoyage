@@ -9,10 +9,11 @@
 import Foundation
 
 
+
 class TranslatorNetworkManager {
     
     
-    func createUrl(baseLanguage : String, returnLanguage : String, textToTranslate : String) -> String {
+    private func createUrl(baseLanguage: String, returnLanguage: String, textToTranslate: String) -> URL? {
         // TODO: Move function into its own service like "TranslatorNetworkManager"
         // TODO: Use URLComponent to create the url instead of appending string
         // TODO: Use add percent encoding for string to url
@@ -33,54 +34,26 @@ class TranslatorNetworkManager {
         ]
         
         
-        guard let url = urlComponents.string else {
-            return ""
+
+        return urlComponents.url
+    }
+    
+    private let networkManager = NetworkManager()
+    
+    
+    
+    func fetchTranslation(baseLanguage: String, returnLanguage: String, textToTranslate: String, completionHandler: @escaping (Result<TranslateResponseResult, NetworkManagerError>) -> Void) {
+        
+        guard let url = createUrl(baseLanguage: baseLanguage, returnLanguage: returnLanguage, textToTranslate: textToTranslate) else {
+            completionHandler(.failure(.unknownErrorOccured))
+            return
         }
-        return url
+        
+        networkManager.fetchResult(url: url, completionHandler: completionHandler)
+    
+    
     }
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    func fetchResult(url: URL, completionHandler: @escaping (Result<TranslateResponseResult, NetworkManagerError>) -> Void) {
-        
-        let session = URLSession.shared
-        
-        
-        let task = session.dataTask(with: url) { (data, response, error) in
-            guard error == nil else {
-                completionHandler(.failure(.unknownErrorOccured))
-                return
-            }
-            
-            guard let response = response as? HTTPURLResponse, 200...399 ~= response.statusCode else {
-                completionHandler(.failure(.invalidResponseStatusCode))
-                return
-            }
-            
-            guard let data = data else {
-                completionHandler(.failure(.noData))
-                return
-            }
-            
-            guard let result = try? JSONDecoder().decode(TranslateResponseResult.self, from: data) else {
-                completionHandler(.failure(.couldNotDecodeJson))
-                return
-            }
-            
-            completionHandler(.success(result))
-            
-        }
-        
-        task.resume()
-        
-    }
     
 }

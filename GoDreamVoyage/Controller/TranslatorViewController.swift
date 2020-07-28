@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TranslatorViewController: UIViewController {
+class TranslatorViewController: BaseViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
@@ -28,6 +28,12 @@ class TranslatorViewController: UIViewController {
     
     @IBOutlet weak var sourceLanguageLabel: UILabel!
     
+    @IBAction func dismissKeyboard(_ sender: UITapGestureRecognizer) {
+        
+            textTotranslate.resignFirstResponder()
+            textTranslate.resignFirstResponder()
+        
+    }
     
     
     var sourceLanguage = Language.French {
@@ -46,45 +52,32 @@ class TranslatorViewController: UIViewController {
     }
     
     
+    @IBAction func change(_ sender: UIButton) {
+        let languageCible = sourceLanguage
+        sourceLanguage = targetLanguage
+        targetLanguage = languageCible
+    }
     
     @IBAction func converter(_ sender: UIButton) {
+        changeLoadingIndicatorVisibility(shouldShow: true)
         guard let textToTranslate = textTotranslate.text else {
             print("notext")
             return
         }
         
-        let urlString = networkManager.createUrl(baseLanguage: sourceLanguage.initial, returnLanguage: targetLanguage.initial, textToTranslate: textToTranslate)
-        guard let url = URL(string: urlString) else {
-            print("erreur")
-            return }
-        networkManager.fetchResult(url: url, completionHandler: handleTranslationResultResponse)
+        translatorNetworkManager.fetchTranslation(
+            baseLanguage: sourceLanguage.initial,
+            returnLanguage: targetLanguage.initial,
+            textToTranslate: textToTranslate,
+            completionHandler: handleTranslationResultResponse(result:))
+        
+    
         
     }
     
-    private let networkManager = TranslatorNetworkManager()
+    private let translatorNetworkManager = TranslatorNetworkManager()
     
-  /*  func createUrl(baseLanguage : String, returnLanguage : String, textToTranslate : String) -> String? {
-        // TODO: Move function into its own service like "TranslatorNetworkManager"
-        // TODO: Use URLComponent to create the url instead of appending string
-        // TODO: Use add percent encoding for string to url
-        let key = "AIzaSyC4ScTYcgRiAY9NQ8TzTJkt1cFzvL6dg4k"
-        let format = "text"
-        
-        var urlComponents = URLComponents()
-        urlComponents.scheme = "https"
-        urlComponents.host = "translation.googleapis.com"
-        urlComponents.path = "/language/translate/v2"
-        urlComponents.queryItems = [
-            URLQueryItem(name: "key", value: key),
-            URLQueryItem(name: "source", value: baseLanguage),
-            URLQueryItem(name: "target", value: returnLanguage),
-            URLQueryItem(name: "q", value: textToTranslate),
-            URLQueryItem(name: "format", value: format)
-        ]
-        
-        return urlComponents.string
-    }
-    */
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -106,6 +99,8 @@ class TranslatorViewController: UIViewController {
     func handleTranslationResultResponse(result: Result<TranslateResponseResult, NetworkManagerError>) {
         
         DispatchQueue.main.async {
+            self.changeLoadingIndicatorVisibility(shouldShow: false)
+            
             switch result {
             case .failure(let error):
                 print("error occured \(error.localizedDescription)")

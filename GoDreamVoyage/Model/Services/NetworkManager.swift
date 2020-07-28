@@ -9,19 +9,6 @@
 import Foundation
 
 
-//    class CurrencyUrlProvider {
-//        func getLatestCurrencyUrl() -> URL {
-//            let baseUrl = "http://data.fixer.io/api/latest"
-//
-//            let accessKeyParameter = "access_key"
-//            let accessKeyValue = "aaa3bb4285d0f3ba1bcda2fc1926c039"
-//
-//
-//            let urlComponent = URLComponents()
-//            urlComponent.host = baseUrl
-//            urlComponent.path =
-//        }
-//    }
 
 
 class NetworkManager {

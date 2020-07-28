@@ -8,9 +8,29 @@
 
 import UIKit
 
-class WeatherViewController: UIViewController {
+class WeatherViewController: BaseViewController {
+    
+    @IBOutlet weak var newYorkImage: UIImageView!
+    @IBOutlet weak var newYorkTemperatureLabel: UILabel!
+    @IBOutlet weak var newYorkClimatLabel: UILabel!
+    
+    
+    @IBOutlet weak var parisClimatLabel: UILabel!
+    @IBOutlet weak var parisTemperatureLabel: UILabel!
+    @IBOutlet weak var parisImage: UIImageView!
+    
+    
     
     private let networkManager = NetworkManager()
+    
+    
+    func loadInformationCity(weatherResponse: WeatherResponseResult) {
+        
+        
+    }
+    
+    
+    
     
     @IBAction func didTapOnLoadButton(_ sender: UIButton) {
         let urlString = "https://api.openweathermap.org/data/2.5/weather?q=Paris&appid=0a3e463e85b227d34e2fc8815539ff20"
@@ -18,7 +38,12 @@ class WeatherViewController: UIViewController {
         networkManager.fetchResult(url: url, completionHandler: handleWeatherResultResponse)
     }
     
-    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        changeLoadingIndicatorVisibility(shouldShow: true)
+        
+     
+    }
     func handleWeatherResultResponse(result: Result<WeatherResponseResult, NetworkManagerError>) {
         
         DispatchQueue.main.async {
