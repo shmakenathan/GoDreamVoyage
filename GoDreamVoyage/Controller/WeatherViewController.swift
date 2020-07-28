@@ -21,43 +21,48 @@ class WeatherViewController: BaseViewController {
     
     
     
-    private let networkManager = NetworkManager()
+    private let weatherNetworkManager = WeatherNetworkManager()
     
     
-    func loadInformationCity(weatherResponse: WeatherResponseResult) {
+    
+    
+    
+    
+    func loadInformationOfCities() {
+        let cities = ["Paris","New York"]
         
-        
-    }
-    
-    
-    
-    
-    @IBAction func didTapOnLoadButton(_ sender: UIButton) {
-        let urlString = "https://api.openweathermap.org/data/2.5/weather?q=Paris&appid=0a3e463e85b227d34e2fc8815539ff20"
-        guard let url = URL(string: urlString) else { return }
-        networkManager.fetchResult(url: url, completionHandler: handleWeatherResultResponse)
+        weatherNetworkManager.fetchWeather(cities: cities, completionHandler: handleWeatherResultResponse(result:))
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         changeLoadingIndicatorVisibility(shouldShow: true)
-        
+        loadInformationOfCities()
      
     }
-    func handleWeatherResultResponse(result: Result<WeatherResponseResult, NetworkManagerError>) {
+    func setImage(from url: String, imageView: UIImageView) {
+        guard let imageURL = URL(string: url) else { return }
+
+            // just not to cause a deadlock in UI!
+        DispatchQueue.global().async {
+            guard let imageData = try? Data(contentsOf: imageURL) else { return }
+
+            let image = UIImage(data: imageData)
+            DispatchQueue.main.async {
+                imageView.image = image
+            }
+        }
+    }
+    func handleWeatherResultResponse(result: Result<[WeatherResponseResult], NetworkManagerError>) {
         
         DispatchQueue.main.async {
             switch result {
             case .failure(let error):
                 print("error occured \(error.localizedDescription)")
-            //self.ratesLabel.text = error.localizedDescription
             case .success(let latestWeatherResult):
-                print("Received the data and now we will display it \(latestWeatherResult.name)")
+                self.setImage(from: "http://openweathermap.org/img/wn/\(latestWeatherResult[1].weather[0].icon)@2x.png", imageView: self.newYorkImage)
                 
-                
-                
-                //self.ratesLabel.text = ratesString
-            }
+                }
             
         }
     }

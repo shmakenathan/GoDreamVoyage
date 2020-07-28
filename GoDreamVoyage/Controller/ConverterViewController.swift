@@ -80,17 +80,7 @@ class ConverterViewController: BaseViewController {
     }
     var currencyTab = ["USD","AUD","CAD","EUR","CHF","GBP","JPY","CNY"]
     
-    func createe(tab1: [String: Double],tab2: [String]) -> [String: Double] {
-        var tab: [String: Double] = ["": 0]
-        for i in tab2 {
-            for (cle, valeur) in tab1 where i == cle {
-                tab[cle] = valeur
-            }
-            tab.removeValue(forKey: "")
-        }
-        return tab
-        
-    }
+    
     private let converterCurrency = ConverterCurrency()
     
     

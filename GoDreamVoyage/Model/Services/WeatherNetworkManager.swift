@@ -23,7 +23,7 @@ class WeatherNetworkManager {
         var urlComponents = URLComponents()
         urlComponents.scheme = "https"
         urlComponents.host = "api.openweathermap.org"
-        urlComponents.path = "/data/2.5/weather?"
+        urlComponents.path = "/data/2.5/weather"
         urlComponents.queryItems = [
             URLQueryItem(name: "q", value: city),
             URLQueryItem(name: "appid", value: key)
