@@ -17,6 +17,7 @@ class BaseViewController: UIViewController {
         setupLoadingIndicator()
         
     }
+    @IBOutlet weak var convertButton: UIButton!
     
     private func setupLoadingIndicator() {
         activityIndicatorView = UIActivityIndicatorView()
@@ -53,9 +54,7 @@ class ConverterViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        
-        // TODO: Hide content until we get rates values
-        // and display loading indicator
+        convertButton.layer.cornerRadius = 10
         
         let myPickerSource = UIPickerView()
         myPickerSource.delegate = self

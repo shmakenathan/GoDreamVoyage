@@ -9,50 +9,41 @@
 import UIKit
 
 class WeatherViewController: BaseViewController {
-    
-    @IBOutlet weak var newYorkImage: UIImageView!
-    @IBOutlet weak var newYorkTemperatureLabel: UILabel!
-    @IBOutlet weak var newYorkClimatLabel: UILabel!
+
     
     
-    @IBOutlet weak var parisClimatLabel: UILabel!
-    @IBOutlet weak var parisTemperatureLabel: UILabel!
-    @IBOutlet weak var parisImage: UIImageView!
+    @IBOutlet var newYork: [UILabel]!
+    @IBOutlet var paris: [UILabel]!
     
-    
-    
+    @IBOutlet weak var parisImageView: UIImageView!
+    @IBOutlet weak var newYorkImageView: UIImageView!
     private let weatherNetworkManager = WeatherNetworkManager()
     
     
     
-    
+    func changeLabel(weatherResponse: WeatherResponseResult, cityLabel: [UILabel]){
+        cityLabel[0].text = weatherResponse.weather[0].weatherDescription
+        cityLabel[1].text = String(Int(round(weatherResponse.main.temp))) + "°"
+        cityLabel[2].text = String(Int(round(weatherResponse.main.tempMax))) + "°"
+        cityLabel[3].text = String(Int(round(weatherResponse.main.tempMin))) + "°"
+        cityLabel[4].text = String(weatherResponse.main.humidity) + "%"
+    }
     
     
     func loadInformationOfCities() {
-        let cities = ["Paris","New York"]
+        let cities = ["New York", "Paris"]
         
+        changeLoadingIndicatorVisibility(shouldShow: true)
         weatherNetworkManager.fetchWeather(cities: cities, completionHandler: handleWeatherResultResponse(result:))
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        changeLoadingIndicatorVisibility(shouldShow: true)
         loadInformationOfCities()
      
     }
-    func setImage(from url: String, imageView: UIImageView) {
-        guard let imageURL = URL(string: url) else { return }
-
-            // just not to cause a deadlock in UI!
-        DispatchQueue.global().async {
-            guard let imageData = try? Data(contentsOf: imageURL) else { return }
-
-            let image = UIImage(data: imageData)
-            DispatchQueue.main.async {
-                imageView.image = image
-            }
-        }
-    }
+    
     func handleWeatherResultResponse(result: Result<[WeatherResponseResult], NetworkManagerError>) {
         
         DispatchQueue.main.async {
@@ -60,10 +51,14 @@ class WeatherViewController: BaseViewController {
             case .failure(let error):
                 print("error occured \(error.localizedDescription)")
             case .success(let latestWeatherResult):
-                self.setImage(from: "http://openweathermap.org/img/wn/\(latestWeatherResult[1].weather[0].icon)@2x.png", imageView: self.newYorkImage)
-                
-                }
+                self.changeLabel(weatherResponse: latestWeatherResult[0], cityLabel: self.newYork)
+                self.newYorkImageView.image = UIImage(named: "\(latestWeatherResult[0].weather[0].icon)")
+                self.changeLabel(weatherResponse: latestWeatherResult[1], cityLabel: self.paris)
+                self.parisImageView.image = UIImage(named: "\(latestWeatherResult[1].weather[0].icon)")
+           
+            }
             
+            self.changeLoadingIndicatorVisibility(shouldShow: false)
         }
     }
 }

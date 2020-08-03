@@ -20,6 +20,8 @@ class TranslatorViewController: BaseViewController {
             languageListViewController.delegate = self
         }
     }
+   
+    @IBOutlet weak var convertButtonTranslate: UIButton!
     
     @IBOutlet weak var sourceLanguageButton: UIButton!
     @IBOutlet weak var targetLanguageButton: UIButton!
@@ -80,7 +82,7 @@ class TranslatorViewController: BaseViewController {
   
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        convertButtonTranslate.layer.cornerRadius = 10
         sourceLanguage = Language.French
         targetLanguage = Language.English
     }

@@ -26,6 +26,7 @@ class WeatherNetworkManager {
         urlComponents.path = "/data/2.5/weather"
         urlComponents.queryItems = [
             URLQueryItem(name: "q", value: city),
+            URLQueryItem(name: "units", value: "metric"),
             URLQueryItem(name: "appid", value: key)
             
         ]
@@ -53,6 +54,7 @@ class WeatherNetworkManager {
                 
                 switch singleResult {
                 case .success(let singleWeatherResponse):
+                    
                     cityResults.append(singleWeatherResponse)
                     if cityResults.count == cities.count {
                         completionHandler(.success(cityResults))
