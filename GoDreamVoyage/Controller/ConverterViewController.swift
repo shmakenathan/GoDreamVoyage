@@ -35,25 +35,71 @@ class BaseViewController: UIViewController {
             activityIndicatorView.stopAnimating()
         }
     }
+    func presentAlert(title: String, message: String) {
+        let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alertVC.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        self.present(alertVC, animated: true, completion: nil)
+    }
+    
 }
 
 class ConverterViewController: BaseViewController {
     
+    // MARK: IBOutlet
     
     @IBOutlet weak var sourceSommeCurrency: UITextField!
     @IBOutlet weak var targetSommeCurrency: UITextField!
-    
     @IBOutlet weak var sourceCurrency: UITextField!
     @IBOutlet weak var targetCurrency: UITextField!
+    
+    // MARK: IBAction
+    
+    @IBAction func dismissKeyboard(_ sender: UITapGestureRecognizer) {
+        sourceSommeCurrency.resignFirstResponder()
+    }
     
     @IBAction func didTapOnSwitchCurrencyButton(_ sender: UIButton) {
         swap(&selectedSourceCurrencyIndex, &selectedTargetCurrencyIndex)
     }
+    
+    @IBAction func convert(_ sender: UIButton) {
+        guard let somme = sourceSommeCurrency.text else { return }
+        targetSommeCurrency.text = converterCurrency.convert(
+            sommeToChange: somme,
+            currencyBase: currencyTab[selectedSourceCurrencyIndex],
+            currencyReturn: currencyTab[selectedTargetCurrencyIndex],
+            rates: rates
+        )
+    }
+    
+    // MARK: Properties - Private
+    
+    private var rates: [String: Double] = [:] {
+        didSet {
+            if rates.count > 0 {
+                changeLoadingIndicatorVisibility(shouldShow: false)
+            }
+        }
+    }
+    private var selectedSourceCurrencyIndex = 0 {
+        didSet {
+            sourceCurrency.text = currencyTab[selectedSourceCurrencyIndex]
+        }
+    }
+    
+    private var selectedTargetCurrencyIndex = 0 {
+        didSet {
+            targetCurrency.text = currencyTab[selectedTargetCurrencyIndex]
+        }
+    }
+    
+    private var currencyTab = ["USD","AUD","CAD","EUR","CHF","GBP","JPY","CNY"]
+    
+    private let converterCurrency = ConverterCurrency()
     private let currencyNetworkManager = CurrencyNetworkManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
         convertButton.layer.cornerRadius = 10
         
         let myPickerSource = UIPickerView()
@@ -68,32 +114,6 @@ class ConverterViewController: BaseViewController {
         targetCurrency.inputView = myPickerTarget
         selectedTargetCurrencyIndex = 1
     }
-    var rates: [String: Double] = [:] {
-        didSet {
-            if rates.count > 0 {
-                // TODO: Display content
-                // hide loading indicator
-                changeLoadingIndicatorVisibility(shouldShow: false)
-            }
-        }
-    }
-    var currencyTab = ["USD","AUD","CAD","EUR","CHF","GBP","JPY","CNY"]
-    
-    
-    private let converterCurrency = ConverterCurrency()
-    
-    
-    @IBAction func convert(_ sender: UIButton) {
-        guard let somme = sourceSommeCurrency.text else { return }
-        
-        targetSommeCurrency.text = converterCurrency.convert(
-            sommeToChange: somme,
-            currencyBase: currencyTab[selectedSourceCurrencyIndex],
-            currencyReturn: currencyTab[selectedTargetCurrencyIndex],
-            rates: rates
-        )
-    }
-    
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -103,44 +123,30 @@ class ConverterViewController: BaseViewController {
         currencyNetworkManager.fetchCurrencyConverter(completionHandler: handleCurrencyResultResponse)
     }
     
+    // MARK: Methods - Private
     
-    
-    func handleCurrencyResultResponse(result: Result<LatestCurrencyResult, NetworkManagerError>) {
-        
+    private func handleCurrencyResultResponse(result: Result<LatestCurrencyResult, NetworkManagerError>) {
         DispatchQueue.main.async {
             switch result {
             case .failure(let error):
-                print("error occured \(error.localizedDescription)")
-                self.sourceCurrency.text = error.localizedDescription
+                self.presentAlert(title: "Error", message: error.message)
             case .success(let latestCurrencyResult):
-                
-
                 self.rates = latestCurrencyResult.rates
-                
             }
-            
         }
     }
     
-    private var selectedSourceCurrencyIndex = 0 {
-        didSet {
-            sourceCurrency.text = currencyTab[selectedSourceCurrencyIndex]
-        }
-    }
     
-    private var selectedTargetCurrencyIndex = 0 {
-        didSet {
-            targetCurrency.text = currencyTab[selectedTargetCurrencyIndex]
-        }
-    }
     
 }
+
 extension ConverterViewController: UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return Currency.allCases[row].title
         
     }
 }
+
 extension ConverterViewController: UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1

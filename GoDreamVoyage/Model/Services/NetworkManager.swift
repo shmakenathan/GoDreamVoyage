@@ -8,20 +8,12 @@
 
 import Foundation
 
-
-
-
 class NetworkManager {
-    
-    //let currencyUrlProvider = CurrencyUrlProvider()
-    
-    
     
     func fetchResult<T: Decodable>(url: URL, completionHandler: @escaping (Result<T, NetworkManagerError>) -> Void) {
         
         let session = URLSession.shared
     
-        
         let task = session.dataTask(with: url) { (data, response, error) in
             guard error == nil else {
                 completionHandler(.failure(.unknownErrorOccured))
@@ -48,8 +40,5 @@ class NetworkManager {
         }
         
         task.resume()
-          
     }
-    
-
 }

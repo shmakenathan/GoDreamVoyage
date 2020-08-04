@@ -55,16 +55,16 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="JWC-pl-n0y">
                                                 <rect key="frame" x="150" y="0.0" width="224" height="160"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ex : 48,56" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AP2-Sk-PFf" userLabel="Source Currency">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ex : 48" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AP2-Sk-PFf" userLabel="Source Somme Currency">
                                                         <rect key="frame" x="0.0" y="0.0" width="224" height="60"/>
                                                         <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
                                                     </textField>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ex : 53,35" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="spS-Dr-3vJ">
+                                                    <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="spS-Dr-3vJ">
                                                         <rect key="frame" x="0.0" y="100" width="224" height="60"/>
                                                         <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done"/>
                                                     </textField>
                                                 </subviews>
@@ -99,6 +99,7 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="d7V-5d-SAg" firstAttribute="centerY" secondItem="ufD-yn-aLl" secondAttribute="centerY" id="C9U-do-0re"/>
                             <constraint firstItem="sSY-CU-fah" firstAttribute="top" secondItem="4D5-ON-WQE" secondAttribute="top" constant="30" id="Sr1-cc-wNy"/>
@@ -107,6 +108,9 @@
                             <constraint firstItem="4D5-ON-WQE" firstAttribute="trailing" secondItem="sSY-CU-fah" secondAttribute="trailing" constant="20" id="mN4-TQ-kEg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4D5-ON-WQE"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="gJl-lr-pKe" appends="YES" id="m6K-xT-5eQ"/>
+                        </connections>
                     </view>
                     <tabBarItem key="tabBarItem" title="Converter" image="dollarsign.circle" catalog="system" selectedImage="dollarsign.circle" id="7E3-7B-nSp"/>
                     <navigationItem key="navigationItem" id="9dE-lT-LZg"/>
@@ -119,6 +123,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FA8-LW-kIm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="gJl-lr-pKe">
+                    <connections>
+                        <action selector="dismissKeyboard:" destination="2KG-QR-h1F" id="cre-Y6-yaI"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1137.68115942029" y="27.455357142857142"/>
         </scene>
@@ -547,7 +556,7 @@
                         <outlet property="sourceLanguageLabel" destination="ZXX-bt-iqe" id="1NY-z6-W0B"/>
                         <outlet property="targetLanguageButton" destination="2YG-cC-HDy" id="GgT-QX-jaI"/>
                         <outlet property="targetLanguageLabel" destination="NCV-sA-Us6" id="U9G-ls-32a"/>
-                        <outlet property="textTotranslate" destination="fhm-Wi-ZKR" id="FnA-d5-a4v"/>
+                        <outlet property="textToTranslate" destination="fhm-Wi-ZKR" id="FnA-d5-a4v"/>
                         <outlet property="textTranslate" destination="EjY-5Z-D71" id="8XC-In-yMm"/>
                     </connections>
                 </viewController>

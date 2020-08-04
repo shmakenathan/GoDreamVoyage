@@ -14,9 +14,6 @@ class TranslatorNetworkManager {
     
     
     private func createUrl(baseLanguage: String, returnLanguage: String, textToTranslate: String) -> URL? {
-        // TODO: Move function into its own service like "TranslatorNetworkManager"
-        // TODO: Use URLComponent to create the url instead of appending string
-        // TODO: Use add percent encoding for string to url
         
         let key = "AIzaSyC4ScTYcgRiAY9NQ8TzTJkt1cFzvL6dg4k"
         let format = "text"
@@ -32,15 +29,10 @@ class TranslatorNetworkManager {
             URLQueryItem(name: "q", value: textToTranslate),
             URLQueryItem(name: "format", value: format)
         ]
-        
-        
-
         return urlComponents.url
     }
     
     private let networkManager = NetworkManager()
-    
-    
     
     func fetchTranslation(baseLanguage: String, returnLanguage: String, textToTranslate: String, completionHandler: @escaping (Result<TranslateResponseResult, NetworkManagerError>) -> Void) {
         
@@ -48,12 +40,6 @@ class TranslatorNetworkManager {
             completionHandler(.failure(.unknownErrorOccured))
             return
         }
-        
         networkManager.fetchResult(url: url, completionHandler: completionHandler)
-    
-    
     }
-    
-    
-    
 }

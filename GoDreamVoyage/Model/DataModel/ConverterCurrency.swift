@@ -11,10 +11,6 @@ import Foundation
 
 class ConverterCurrency {
     
-    
-    
-   
-        
     func convert(sommeToChange: String, currencyBase: String, currencyReturn: String, rates: [String: Double]) -> String {
         var result = 0.0
         if currencyBase != Currency.Euro.initial {

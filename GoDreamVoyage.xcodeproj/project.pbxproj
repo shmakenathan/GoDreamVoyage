@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D839F79124C6D118005CCD09 /* WeatherNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D839F79024C6D118005CCD09 /* WeatherNetworkManager.swift */; };
-		D83C126A24CFAECD002071E9 /* UITextfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83C126924CFAECD002071E9 /* UITextfield.swift */; };
+		D83C126A24CFAECD002071E9 /* UITextToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83C126924CFAECD002071E9 /* UITextToolbar.swift */; };
 		D84E2D0524A12451008C0025 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84E2D0424A12451008C0025 /* Language.swift */; };
 		D84E2D0724A12DF7008C0025 /* LanguageListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84E2D0624A12DF7008C0025 /* LanguageListViewController.swift */; };
 		D84E2D0924A26978008C0025 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84E2D0824A26978008C0025 /* Currency.swift */; };
@@ -33,7 +33,7 @@
 
 /* Begin PBXFileReference section */
 		D839F79024C6D118005CCD09 /* WeatherNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherNetworkManager.swift; sourceTree = "<group>"; };
-		D83C126924CFAECD002071E9 /* UITextfield.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextfield.swift; sourceTree = "<group>"; };
+		D83C126924CFAECD002071E9 /* UITextToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextToolbar.swift; sourceTree = "<group>"; };
 		D84E2D0424A12451008C0025 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Language.swift; path = GoDreamVoyage/Model/DataModel/Language.swift; sourceTree = SOURCE_ROOT; };
 		D84E2D0624A12DF7008C0025 /* LanguageListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageListViewController.swift; sourceTree = "<group>"; };
 		D84E2D0824A26978008C0025 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
@@ -155,7 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				D85B6E5C246C25A5009E0D55 /* ConverterViewController.swift */,
-				D83C126924CFAECD002071E9 /* UITextfield.swift */,
+				D83C126924CFAECD002071E9 /* UITextToolbar.swift */,
 				D84E2D0624A12DF7008C0025 /* LanguageListViewController.swift */,
 				D884F8B8249912EB002FD3A9 /* TranslatorViewController.swift */,
 				D856D2D4248FEFC200824022 /* WeatherViewController.swift */,
@@ -251,7 +251,7 @@
 				D884F8B9249912EB002FD3A9 /* TranslatorViewController.swift in Sources */,
 				D856D2D5248FEFC200824022 /* WeatherViewController.swift in Sources */,
 				D85B6E4B246C22B4009E0D55 /* SceneDelegate.swift in Sources */,
-				D83C126A24CFAECD002071E9 /* UITextfield.swift in Sources */,
+				D83C126A24CFAECD002071E9 /* UITextToolbar.swift in Sources */,
 				D85B6E5D246C25A5009E0D55 /* ConverterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

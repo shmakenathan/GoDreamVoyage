@@ -15,19 +15,12 @@ protocol LanguageListViewControllerDelegate: AnyObject {
 }
 
 class LanguageListViewController: UIViewController {
-    
-    
     weak var delegate: LanguageListViewControllerDelegate?
-    
     var isSourceLanguageSelection = true
-    
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
-    
 }
 
 extension LanguageListViewController: UITableViewDataSource {
@@ -45,17 +38,11 @@ extension LanguageListViewController: UITableViewDataSource {
 
 extension LanguageListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //New language
-        
-        
-        
         let selectedLanguage = Language.allCases[indexPath.row]
         
         isSourceLanguageSelection ?
             delegate?.didSelectSourceLanguage(language: selectedLanguage) :
             delegate?.didSelectTargetLanguage(language: selectedLanguage)
-
-        //Close the list
         self.dismiss(animated: true, completion: nil)
     }
 }
