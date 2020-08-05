@@ -17,7 +17,7 @@ class CurrencyNetworkManager {
     
     private let networkManager = NetworkManager()
     
-    func fetchCurrencyConverter(completionHandler: @escaping (Result<LatestCurrencyResult, NetworkManagerError>) -> Void) {
+    func fetchCurrencyConverter(completionHandler: @escaping (Result<CurrencyResponseResult, NetworkManagerError>) -> Void) {
         
         guard let url = createUrl() else {
             completionHandler(.failure(.unknownErrorOccured))

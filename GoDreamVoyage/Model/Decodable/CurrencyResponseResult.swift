@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct LatestCurrencyResult: Codable {
+struct CurrencyResponseResult: Codable {
     let success: Bool
     let timestamp: Int
     let base, date: String

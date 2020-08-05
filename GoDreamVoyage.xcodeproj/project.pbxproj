@@ -27,9 +27,23 @@
 		D8A8D80724B84928003467B0 /* WeatherClimat.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A8D80624B84928003467B0 /* WeatherClimat.swift */; };
 		D8A8D80924B85503003467B0 /* CurrencyNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A8D80824B85503003467B0 /* CurrencyNetworkManager.swift */; };
 		D8EC3F3824DB608300616BEF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8EC3F3724DB608300616BEF /* SceneDelegate.swift */; };
-		D8F7C55D2487FD38007E37C3 /* LatestCurrencyResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F7C55C2487FD38007E37C3 /* LatestCurrencyResult.swift */; };
+		D8EC3F4024DB689F00616BEF /* GoDreamVoyageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8EC3F3F24DB689F00616BEF /* GoDreamVoyageTests.swift */; };
+		D8EC3F4824DB691A00616BEF /* TranslateResponseResult.json in Resources */ = {isa = PBXBuildFile; fileRef = D8EC3F4724DB691A00616BEF /* TranslateResponseResult.json */; };
+		D8EC3F4A24DB696D00616BEF /* WeatherResponseResult.json in Resources */ = {isa = PBXBuildFile; fileRef = D8EC3F4924DB696D00616BEF /* WeatherResponseResult.json */; };
+		D8EC3F4C24DB698200616BEF /* CurrencyResponseResult.json in Resources */ = {isa = PBXBuildFile; fileRef = D8EC3F4B24DB698200616BEF /* CurrencyResponseResult.json */; };
+		D8F7C55D2487FD38007E37C3 /* CurrencyResponseResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F7C55C2487FD38007E37C3 /* CurrencyResponseResult.swift */; };
 		D8F7C55F2487FD5F007E37C3 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F7C55E2487FD5F007E37C3 /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D8EC3F4224DB689F00616BEF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D85B6E3D246C22B4009E0D55 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D85B6E44246C22B4009E0D55;
+			remoteInfo = GoDreamVoyage;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		D839F79024C6D118005CCD09 /* WeatherNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherNetworkManager.swift; sourceTree = "<group>"; };
@@ -54,12 +68,25 @@
 		D8A8D80624B84928003467B0 /* WeatherClimat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherClimat.swift; sourceTree = "<group>"; };
 		D8A8D80824B85503003467B0 /* CurrencyNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyNetworkManager.swift; sourceTree = "<group>"; };
 		D8EC3F3724DB608300616BEF /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SceneDelegate.swift; path = "../../../../../Library/Mobile Documents/com~apple~CloudDocs/.Trash/SceneDelegate.swift"; sourceTree = "<group>"; };
-		D8F7C55C2487FD38007E37C3 /* LatestCurrencyResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestCurrencyResult.swift; sourceTree = "<group>"; };
+		D8EC3F3D24DB689F00616BEF /* GoDreamVoyageTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoDreamVoyageTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8EC3F3F24DB689F00616BEF /* GoDreamVoyageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoDreamVoyageTests.swift; sourceTree = "<group>"; };
+		D8EC3F4124DB689F00616BEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D8EC3F4724DB691A00616BEF /* TranslateResponseResult.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = TranslateResponseResult.json; sourceTree = "<group>"; };
+		D8EC3F4924DB696D00616BEF /* WeatherResponseResult.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = WeatherResponseResult.json; sourceTree = "<group>"; };
+		D8EC3F4B24DB698200616BEF /* CurrencyResponseResult.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CurrencyResponseResult.json; sourceTree = "<group>"; };
+		D8F7C55C2487FD38007E37C3 /* CurrencyResponseResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyResponseResult.swift; sourceTree = "<group>"; };
 		D8F7C55E2487FD5F007E37C3 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		D85B6E42246C22B4009E0D55 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8EC3F3A24DB689F00616BEF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -74,7 +101,7 @@
 			children = (
 				D856D2CE248FE66C00824022 /* TranslateResponseResult.swift */,
 				D856D2D0248FEF5500824022 /* WeatherResponseResult.swift */,
-				D8F7C55C2487FD38007E37C3 /* LatestCurrencyResult.swift */,
+				D8F7C55C2487FD38007E37C3 /* CurrencyResponseResult.swift */,
 			);
 			path = Decodable;
 			sourceTree = "<group>";
@@ -106,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				D85B6E47246C22B4009E0D55 /* GoDreamVoyage */,
+				D8EC3F3E24DB689F00616BEF /* GoDreamVoyageTests */,
 				D85B6E46246C22B4009E0D55 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -114,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				D85B6E45246C22B4009E0D55 /* GoDreamVoyage.app */,
+				D8EC3F3D24DB689F00616BEF /* GoDreamVoyageTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -163,6 +192,18 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		D8EC3F3E24DB689F00616BEF /* GoDreamVoyageTests */ = {
+			isa = PBXGroup;
+			children = (
+				D8EC3F3F24DB689F00616BEF /* GoDreamVoyageTests.swift */,
+				D8EC3F4B24DB698200616BEF /* CurrencyResponseResult.json */,
+				D8EC3F4724DB691A00616BEF /* TranslateResponseResult.json */,
+				D8EC3F4924DB696D00616BEF /* WeatherResponseResult.json */,
+				D8EC3F4124DB689F00616BEF /* Info.plist */,
+			);
+			path = GoDreamVoyageTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -183,18 +224,40 @@
 			productReference = D85B6E45246C22B4009E0D55 /* GoDreamVoyage.app */;
 			productType = "com.apple.product-type.application";
 		};
+		D8EC3F3C24DB689F00616BEF /* GoDreamVoyageTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D8EC3F4424DB689F00616BEF /* Build configuration list for PBXNativeTarget "GoDreamVoyageTests" */;
+			buildPhases = (
+				D8EC3F3924DB689F00616BEF /* Sources */,
+				D8EC3F3A24DB689F00616BEF /* Frameworks */,
+				D8EC3F3B24DB689F00616BEF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D8EC3F4324DB689F00616BEF /* PBXTargetDependency */,
+			);
+			name = GoDreamVoyageTests;
+			productName = GoDreamVoyageTests;
+			productReference = D8EC3F3D24DB689F00616BEF /* GoDreamVoyageTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		D85B6E3D246C22B4009E0D55 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1130;
+				LastSwiftUpdateCheck = 1160;
 				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = Nathan;
 				TargetAttributes = {
 					D85B6E44246C22B4009E0D55 = {
 						CreatedOnToolsVersion = 11.3.1;
+					};
+					D8EC3F3C24DB689F00616BEF = {
+						CreatedOnToolsVersion = 11.6;
+						TestTargetID = D85B6E44246C22B4009E0D55;
 					};
 				};
 			};
@@ -212,6 +275,7 @@
 			projectRoot = "";
 			targets = (
 				D85B6E44246C22B4009E0D55 /* GoDreamVoyage */,
+				D8EC3F3C24DB689F00616BEF /* GoDreamVoyageTests */,
 			);
 		};
 /* End PBXProject section */
@@ -224,6 +288,16 @@
 				D85B6E55246C22B6009E0D55 /* LaunchScreen.storyboard in Resources */,
 				D85B6E52246C22B6009E0D55 /* Assets.xcassets in Resources */,
 				D85B6E50246C22B4009E0D55 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8EC3F3B24DB689F00616BEF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8EC3F4A24DB696D00616BEF /* WeatherResponseResult.json in Resources */,
+				D8EC3F4824DB691A00616BEF /* TranslateResponseResult.json in Resources */,
+				D8EC3F4C24DB698200616BEF /* CurrencyResponseResult.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,7 +315,7 @@
 				D84E2D0B24A2CBEC008C0025 /* ConverterCurrency.swift in Sources */,
 				D8F7C55F2487FD5F007E37C3 /* NetworkManager.swift in Sources */,
 				D856D2CF248FE66C00824022 /* TranslateResponseResult.swift in Sources */,
-				D8F7C55D2487FD38007E37C3 /* LatestCurrencyResult.swift in Sources */,
+				D8F7C55D2487FD38007E37C3 /* CurrencyResponseResult.swift in Sources */,
 				D84E2D0E24AAF396008C0025 /* TranslatorNetworkManager.swift in Sources */,
 				D839F79124C6D118005CCD09 /* WeatherNetworkManager.swift in Sources */,
 				D8A8D80724B84928003467B0 /* WeatherClimat.swift in Sources */,
@@ -256,7 +330,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D8EC3F3924DB689F00616BEF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8EC3F4024DB689F00616BEF /* GoDreamVoyageTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D8EC3F4324DB689F00616BEF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D85B6E44246C22B4009E0D55 /* GoDreamVoyage */;
+			targetProxy = D8EC3F4224DB689F00616BEF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		D85B6E4E246C22B4009E0D55 /* Main.storyboard */ = {
@@ -434,6 +524,48 @@
 			};
 			name = Release;
 		};
+		D8EC3F4524DB689F00616BEF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LV6V24R5F5;
+				INFOPLIST_FILE = GoDreamVoyageTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Nathan-.GoDreamVoyageTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GoDreamVoyage.app/GoDreamVoyage";
+			};
+			name = Debug;
+		};
+		D8EC3F4624DB689F00616BEF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LV6V24R5F5;
+				INFOPLIST_FILE = GoDreamVoyageTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Nathan-.GoDreamVoyageTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GoDreamVoyage.app/GoDreamVoyage";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -451,6 +583,15 @@
 			buildConfigurations = (
 				D85B6E5A246C22B6009E0D55 /* Debug */,
 				D85B6E5B246C22B6009E0D55 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D8EC3F4424DB689F00616BEF /* Build configuration list for PBXNativeTarget "GoDreamVoyageTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D8EC3F4524DB689F00616BEF /* Debug */,
+				D8EC3F4624DB689F00616BEF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

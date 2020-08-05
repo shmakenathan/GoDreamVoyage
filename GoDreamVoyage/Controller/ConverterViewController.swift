@@ -126,7 +126,7 @@ class ConverterViewController: BaseViewController {
     
     // MARK: Methods - Private
     
-    private func handleCurrencyResultResponse(result: Result<LatestCurrencyResult, NetworkManagerError>) {
+    private func handleCurrencyResultResponse(result: Result<CurrencyResponseResult, NetworkManagerError>) {
         DispatchQueue.main.async {
             switch result {
             case .failure(let error):
