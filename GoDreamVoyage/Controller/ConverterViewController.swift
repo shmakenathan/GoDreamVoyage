@@ -17,7 +17,7 @@ class BaseViewController: UIViewController {
         setupLoadingIndicator()
         
     }
-    @IBOutlet weak var convertButton: UIButton!
+   
     
     private func setupLoadingIndicator() {
         activityIndicatorView = UIActivityIndicatorView()
@@ -51,7 +51,8 @@ class ConverterViewController: BaseViewController {
     @IBOutlet weak var targetSommeCurrency: UITextField!
     @IBOutlet weak var sourceCurrency: UITextField!
     @IBOutlet weak var targetCurrency: UITextField!
-    
+    @IBOutlet weak var convertButton: UIButton!
+
     // MARK: IBAction
     
     @IBAction func dismissKeyboard(_ sender: UITapGestureRecognizer) {

@@ -19,7 +19,6 @@
 		D856D2D1248FEF5500824022 /* WeatherResponseResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = D856D2D0248FEF5500824022 /* WeatherResponseResult.swift */; };
 		D856D2D5248FEFC200824022 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D856D2D4248FEFC200824022 /* WeatherViewController.swift */; };
 		D85B6E49246C22B4009E0D55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85B6E48246C22B4009E0D55 /* AppDelegate.swift */; };
-		D85B6E4B246C22B4009E0D55 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85B6E4A246C22B4009E0D55 /* SceneDelegate.swift */; };
 		D85B6E50246C22B4009E0D55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D85B6E4E246C22B4009E0D55 /* Main.storyboard */; };
 		D85B6E52246C22B6009E0D55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D85B6E51246C22B6009E0D55 /* Assets.xcassets */; };
 		D85B6E55246C22B6009E0D55 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D85B6E53246C22B6009E0D55 /* LaunchScreen.storyboard */; };
@@ -27,6 +26,7 @@
 		D884F8B9249912EB002FD3A9 /* TranslatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D884F8B8249912EB002FD3A9 /* TranslatorViewController.swift */; };
 		D8A8D80724B84928003467B0 /* WeatherClimat.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A8D80624B84928003467B0 /* WeatherClimat.swift */; };
 		D8A8D80924B85503003467B0 /* CurrencyNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A8D80824B85503003467B0 /* CurrencyNetworkManager.swift */; };
+		D8EC3F3824DB608300616BEF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8EC3F3724DB608300616BEF /* SceneDelegate.swift */; };
 		D8F7C55D2487FD38007E37C3 /* LatestCurrencyResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F7C55C2487FD38007E37C3 /* LatestCurrencyResult.swift */; };
 		D8F7C55F2487FD5F007E37C3 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F7C55E2487FD5F007E37C3 /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
@@ -45,7 +45,6 @@
 		D856D2D4248FEFC200824022 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		D85B6E45246C22B4009E0D55 /* GoDreamVoyage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoDreamVoyage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D85B6E48246C22B4009E0D55 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D85B6E4A246C22B4009E0D55 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		D85B6E4F246C22B4009E0D55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D85B6E51246C22B6009E0D55 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D85B6E54246C22B6009E0D55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -54,6 +53,7 @@
 		D884F8B8249912EB002FD3A9 /* TranslatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslatorViewController.swift; sourceTree = "<group>"; };
 		D8A8D80624B84928003467B0 /* WeatherClimat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherClimat.swift; sourceTree = "<group>"; };
 		D8A8D80824B85503003467B0 /* CurrencyNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyNetworkManager.swift; sourceTree = "<group>"; };
+		D8EC3F3724DB608300616BEF /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SceneDelegate.swift; path = "../../../../../Library/Mobile Documents/com~apple~CloudDocs/.Trash/SceneDelegate.swift"; sourceTree = "<group>"; };
 		D8F7C55C2487FD38007E37C3 /* LatestCurrencyResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestCurrencyResult.swift; sourceTree = "<group>"; };
 		D8F7C55E2487FD5F007E37C3 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -125,7 +125,7 @@
 				D85B6E60246C26DA009E0D55 /* Model */,
 				D85B6E5F246C26B9009E0D55 /* View */,
 				D85B6E48246C22B4009E0D55 /* AppDelegate.swift */,
-				D85B6E4A246C22B4009E0D55 /* SceneDelegate.swift */,
+				D8EC3F3724DB608300616BEF /* SceneDelegate.swift */,
 				D85B6E51246C22B6009E0D55 /* Assets.xcassets */,
 				D85B6E56246C22B6009E0D55 /* Info.plist */,
 			);
@@ -250,7 +250,7 @@
 				D84E2D0724A12DF7008C0025 /* LanguageListViewController.swift in Sources */,
 				D884F8B9249912EB002FD3A9 /* TranslatorViewController.swift in Sources */,
 				D856D2D5248FEFC200824022 /* WeatherViewController.swift in Sources */,
-				D85B6E4B246C22B4009E0D55 /* SceneDelegate.swift in Sources */,
+				D8EC3F3824DB608300616BEF /* SceneDelegate.swift in Sources */,
 				D83C126A24CFAECD002071E9 /* UITextToolbar.swift in Sources */,
 				D85B6E5D246C25A5009E0D55 /* ConverterViewController.swift in Sources */,
 			);
@@ -400,6 +400,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LV6V24R5F5;
 				INFOPLIST_FILE = GoDreamVoyage/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -420,6 +421,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LV6V24R5F5;
 				INFOPLIST_FILE = GoDreamVoyage/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
