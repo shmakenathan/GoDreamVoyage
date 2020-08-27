@@ -8,7 +8,7 @@
 
 import Foundation
 
-class WeatherUrlProviederMock: WeatherUrlProvider {
+class WeatherUrlProviderMock: WeatherUrlProvider {
     override func createUrl(city: String) -> URL? {
         return nil
     }
@@ -50,6 +50,7 @@ class WeatherNetworkManager {
     private let weatherUrlProvider: WeatherUrlProvider
     
     private let networkManager: NetworkManager
+    
     func fetchWeather(cities: [String], completionHandler: @escaping (Result<[WeatherResponseResult], NetworkManagerError>) -> Void) {
         
         var cityResults: [WeatherResponseResult] = []

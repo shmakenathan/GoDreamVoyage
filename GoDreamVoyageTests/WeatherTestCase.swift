@@ -9,9 +9,9 @@ import XCTest
 @testable import GoDreamVoyage
 
 class WeatherTestCase: XCTestCase {
-
+    
     func testGetWeatherShouldPostFailed() {
-     
+        
         let networkManager = NetworkManager(session:
             URLSessionFake(data: nil,
                            response: nil,
@@ -106,6 +106,27 @@ class WeatherTestCase: XCTestCase {
                 XCTAssertEqual(weatherResponse[0].name, "Paris")
                 XCTAssertEqual(weatherResponse[0].main.temp , 20.64)
                 XCTAssertEqual(weatherResponse[0].weather[0].weatherDescription, "clear sky")
+            }
+        }
+    }
+    
+    func testGetWeatherWithNoUrl() {
+        
+        let networkManager = NetworkManager(session:
+            URLSessionFake(data: nil,
+                           response: nil,
+                           error: nil))
+        
+        let weatherUrlProvider = WeatherUrlProviderMock()
+        
+        let weatherService = WeatherNetworkManager(networkManager: networkManager, weatherUrlProvider: weatherUrlProvider)
+        
+        weatherService.fetchWeather(cities: ["Paris"]) { (result) in
+            switch result {
+            case .failure(let error):
+                XCTAssertEqual(error, NetworkManagerError.unknownErrorOccured)
+            case .success:
+                XCTFail()
             }
         }
     }

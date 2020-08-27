@@ -102,7 +102,7 @@ class TranslateTestCase: XCTestCase {
                 error: nil
             )
         )
-        let translatorUrlProvider = TranslatorUrlProviederMock()
+        let translatorUrlProvider = TranslatorUrlProviderMock()
         
         let translateService = TranslatorNetworkManager(
             networkManager: networkManager,

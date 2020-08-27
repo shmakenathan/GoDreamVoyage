@@ -8,7 +8,7 @@
 
 import Foundation
 
-class TranslatorUrlProviederMock: TranslatorUrlProvider {
+class TranslatorUrlProviderMock: TranslatorUrlProvider {
     override func createUrl(baseLanguage: String, returnLanguage: String, textToTranslate: String) -> URL? {
         return nil
     }
