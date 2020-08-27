@@ -2,11 +2,12 @@
 //  BaseViewController.swift
 //  GoDreamVoyage
 //
-//  Created by Nathan on 04/08/2020.
+//  Created by Nathan on 17/08/2020.
 //  Copyright © 2020 Nathan. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
 class BaseViewController: UIViewController {
     
     private var activityIndicatorView: UIActivityIndicatorView!
@@ -16,7 +17,7 @@ class BaseViewController: UIViewController {
         setupLoadingIndicator()
         
     }
-    @IBOutlet weak var convertButton: UIButton!
+   
     
     private func setupLoadingIndicator() {
         activityIndicatorView = UIActivityIndicatorView()
@@ -39,5 +40,5 @@ class BaseViewController: UIViewController {
         alertVC.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
         self.present(alertVC, animated: true, completion: nil)
     }
-
+    
 }

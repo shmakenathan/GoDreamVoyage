@@ -8,9 +8,15 @@
 
 import Foundation
 
-class WeatherNetworkManager {
-    
-    private func createUrl(city: String) -> URL? {
+class WeatherUrlProviederMock: WeatherUrlProvider {
+    override func createUrl(city: String) -> URL? {
+        return nil
+    }
+}
+
+
+class WeatherUrlProvider {
+    func createUrl(city: String) -> URL? {
         
         let key = "0a3e463e85b227d34e2fc8815539ff20"
         
@@ -25,15 +31,31 @@ class WeatherNetworkManager {
         ]
         return urlComponents.url
     }
+}
+
+
+class WeatherNetworkManager {
     
-    private let networkManager = NetworkManager()
     
+    
+    init(
+        networkManager: NetworkManager = NetworkManager(),
+        weatherUrlProvider: WeatherUrlProvider = WeatherUrlProvider()
+    ) {
+        self.networkManager = networkManager
+        self.weatherUrlProvider = weatherUrlProvider
+    }
+    
+    
+    private let weatherUrlProvider: WeatherUrlProvider
+    
+    private let networkManager: NetworkManager
     func fetchWeather(cities: [String], completionHandler: @escaping (Result<[WeatherResponseResult], NetworkManagerError>) -> Void) {
         
         var cityResults: [WeatherResponseResult] = []
         
         for city in cities {
-            guard let url = createUrl(city: city) else {
+            guard let url = weatherUrlProvider.createUrl(city: city) else {
                 completionHandler(.failure(.unknownErrorOccured))
                 return
             }

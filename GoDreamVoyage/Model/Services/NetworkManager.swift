@@ -9,10 +9,15 @@
 import Foundation
 
 class NetworkManager {
+    init(session: URLSession = URLSession.shared) {
+        self.session = session
+    }
+    
+    let session: URLSession
     
     func fetchResult<T: Decodable>(url: URL, completionHandler: @escaping (Result<T, NetworkManagerError>) -> Void) {
         
-        let session = URLSession.shared
+        
     
         let task = session.dataTask(with: url) { (data, response, error) in
             guard error == nil else {
@@ -20,7 +25,7 @@ class NetworkManager {
                 return
             }
             
-            guard let response = response as? HTTPURLResponse, 200...399 ~= response.statusCode else {
+            guard let response = response as? HTTPURLResponse, 200...299 ~= response.statusCode else {
                 completionHandler(.failure(.invalidResponseStatusCode))
                 return
             }

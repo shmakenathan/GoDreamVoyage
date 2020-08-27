@@ -1,6 +1,10 @@
 import Foundation
 class CurrencyNetworkManager {
     
+    init(networkManager: NetworkManager = NetworkManager()) {
+        self.networkManager = networkManager
+    }
+    
     
     private func createUrl() -> URL? {
         let access_key = "aaa3bb4285d0f3ba1bcda2fc1926c039"
@@ -15,7 +19,7 @@ class CurrencyNetworkManager {
         return urlComponents.url
     }
     
-    private let networkManager = NetworkManager()
+    private let networkManager: NetworkManager
     
     func fetchCurrencyConverter(completionHandler: @escaping (Result<CurrencyResponseResult, NetworkManagerError>) -> Void) {
         

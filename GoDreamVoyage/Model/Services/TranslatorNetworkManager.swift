@@ -8,12 +8,15 @@
 
 import Foundation
 
+class TranslatorUrlProviederMock: TranslatorUrlProvider {
+    override func createUrl(baseLanguage: String, returnLanguage: String, textToTranslate: String) -> URL? {
+        return nil
+    }
+}
 
 
-class TranslatorNetworkManager {
-    
-    
-    private func createUrl(baseLanguage: String, returnLanguage: String, textToTranslate: String) -> URL? {
+class TranslatorUrlProvider {
+    func createUrl(baseLanguage: String, returnLanguage: String, textToTranslate: String) -> URL? {
         
         let key = "AIzaSyC4ScTYcgRiAY9NQ8TzTJkt1cFzvL6dg4k"
         let format = "text"
@@ -31,12 +34,27 @@ class TranslatorNetworkManager {
         ]
         return urlComponents.url
     }
+}
+
+
+class TranslatorNetworkManager {
     
-    private let networkManager = NetworkManager()
+    init(
+        networkManager: NetworkManager = NetworkManager(),
+        translatorUrlProvider: TranslatorUrlProvider = TranslatorUrlProvider()
+    ) {
+        self.networkManager = networkManager
+        self.translatorUrlProvider = translatorUrlProvider
+    }
+    
+    
+    private let translatorUrlProvider: TranslatorUrlProvider
+    
+    private let networkManager: NetworkManager
     
     func fetchTranslation(baseLanguage: String, returnLanguage: String, textToTranslate: String, completionHandler: @escaping (Result<TranslateResponseResult, NetworkManagerError>) -> Void) {
         
-        guard let url = createUrl(baseLanguage: baseLanguage, returnLanguage: returnLanguage, textToTranslate: textToTranslate) else {
+        guard let url = translatorUrlProvider.createUrl(baseLanguage: baseLanguage, returnLanguage: returnLanguage, textToTranslate: textToTranslate) else {
             completionHandler(.failure(.unknownErrorOccured))
             return
         }
