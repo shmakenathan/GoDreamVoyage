@@ -135,9 +135,11 @@ class ConverterTestCase: XCTestCase {
             "CHF": 1.15744,
             "AUD": 1.559241,
             "JPY": 128.390942,
+            "EUR": 1.0,
             "CNY": 7.471015
         ]
-        XCTAssertEqual("1.160491", convert.convert(sommeToChange: "1", currencyBase: "EUR", currencyReturn: "USD", rates: rates))
-        XCTAssertEqual("1.0", convert.convert(sommeToChange: "1", currencyBase: "USD", currencyReturn: "USD", rates: rates))
+        XCTAssertEqual("7.47", convert.convert(sommeToChange: "1", currencyBase: "EUR", currencyReturn: "CNY", rates: rates))
+        XCTAssertEqual("1", convert.convert(sommeToChange: "1", currencyBase: "USD", currencyReturn: "USD", rates: rates))
+        XCTAssertEqual("erreur", convert.convert(sommeToChange: "jhdeh", currencyBase: "EUR", currencyReturn: "CNY", rates: rates))
     }
 }

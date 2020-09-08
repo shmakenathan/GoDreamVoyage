@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dqq-7Y-pOF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dqq-7Y-pOF">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -26,24 +26,24 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="100" height="160"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ex : Dollar, Euro, Livre" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ttB-Fv-pKZ">
-                                                        <rect key="frame" x="0.0" y="0.0" width="100" height="60.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="100" height="58.5"/>
                                                         <color key="backgroundColor" systemColor="systemGray4Color" red="0.81960784310000001" green="0.81960784310000001" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZOi-H6-5E3">
-                                                        <rect key="frame" x="0.0" y="60.5" width="100" height="40"/>
+                                                        <rect key="frame" x="0.0" y="58.5" width="100" height="40"/>
                                                         <color key="backgroundColor" red="0.67207004059999997" green="0.82685390830000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="VJx-uR-0HG"/>
                                                         </constraints>
-                                                        <state key="normal" image="arrow.up.arrow.down" catalog="system"/>
+                                                        <state key="normal" image="icons8-sorting_arrows"/>
                                                         <connections>
                                                             <action selector="didTapOnSwitchCurrencyButton:" destination="2KG-QR-h1F" eventType="touchUpInside" id="KeT-mz-ISb"/>
                                                         </connections>
                                                     </button>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ex : Dollar, Euro, Livre" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lYG-Wv-kAX">
-                                                        <rect key="frame" x="0.0" y="100.5" width="100" height="59.5"/>
+                                                        <rect key="frame" x="0.0" y="98.5" width="100" height="61.5"/>
                                                         <color key="backgroundColor" systemColor="systemGray4Color" red="0.81960784310000001" green="0.81960784310000001" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -113,7 +113,7 @@
                             <outletCollection property="gestureRecognizers" destination="gJl-lr-pKe" appends="YES" id="m6K-xT-5eQ"/>
                         </connections>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Converter" image="dollarsign.circle" catalog="system" selectedImage="dollarsign.circle" id="7E3-7B-nSp"/>
+                    <tabBarItem key="tabBarItem" title="Converter" image="icons8-currency_exchange" selectedImage="icons8-currency_exchange" id="7E3-7B-nSp"/>
                     <navigationItem key="navigationItem" id="9dE-lT-LZg"/>
                     <connections>
                         <outlet property="convertButton" destination="d7V-5d-SAg" id="E8s-Nk-FgN"/>
@@ -141,6 +141,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="beG-UX-wbd" kind="relationship" relationship="viewControllers" id="2Dn-aj-TKs"/>
@@ -383,7 +384,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wAo-co-W6u"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Weather" image="cloud.sun.fill" catalog="system" selectedImage="cloud.sun.fill" id="LUK-En-plZ"/>
+                    <tabBarItem key="tabBarItem" title="Weather" image="icons8-partly_cloudy_day" selectedImage="icons8-partly_cloudy_day" id="LUK-En-plZ"/>
                     <connections>
                         <outlet property="newYorkImageView" destination="MYI-FZ-TOo" id="cRl-mz-kdm"/>
                         <outlet property="parisImageView" destination="7TO-6k-XSQ" id="88V-Nc-o0W"/>
@@ -428,7 +429,7 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dU7-Eb-H83">
                                                 <rect key="frame" x="124.5" y="0.0" width="125" height="40"/>
-                                                <state key="normal" image="arrow.right.arrow.left" catalog="system"/>
+                                                <state key="normal" image="icons8-sorting_arrows_horizontal"/>
                                                 <connections>
                                                     <action selector="change:" destination="jWZ-GG-5bO" eventType="touchUpInside" id="FKU-eP-4aH"/>
                                                 </connections>
@@ -563,7 +564,7 @@
                             <outletCollection property="gestureRecognizers" destination="KGo-Mb-q8z" appends="YES" id="9NH-zs-jId"/>
                         </connections>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Translator" image="text.bubble.fill" catalog="system" selectedImage="text.bubble.fill" id="e5n-jo-1Jx"/>
+                    <tabBarItem key="tabBarItem" title="Translator" image="icons8-language" selectedImage="icons8-language" id="e5n-jo-1Jx"/>
                     <connections>
                         <outlet property="convertButtonTranslate" destination="r39-GB-5Ua" id="UIf-Xv-knd"/>
                         <outlet property="sourceLanguageButton" destination="vmd-N8-OhX" id="h58-Wr-Xub"/>
@@ -631,10 +632,10 @@
     <resources>
         <image name="03n" width="50" height="50"/>
         <image name="11n" width="50" height="50"/>
-        <image name="arrow.right.arrow.left" catalog="system" width="119" height="128"/>
-        <image name="arrow.up.arrow.down" catalog="system" width="128" height="96"/>
-        <image name="cloud.sun.fill" catalog="system" width="128" height="88"/>
-        <image name="dollarsign.circle" catalog="system" width="128" height="121"/>
-        <image name="text.bubble.fill" catalog="system" width="128" height="110"/>
+        <image name="icons8-currency_exchange" width="25" height="25"/>
+        <image name="icons8-language" width="25" height="25"/>
+        <image name="icons8-partly_cloudy_day" width="25" height="25"/>
+        <image name="icons8-sorting_arrows" width="25" height="25"/>
+        <image name="icons8-sorting_arrows_horizontal" width="25" height="25"/>
     </resources>
 </document>

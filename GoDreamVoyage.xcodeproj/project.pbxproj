@@ -24,7 +24,6 @@
 		D85B6E55246C22B6009E0D55 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D85B6E53246C22B6009E0D55 /* LaunchScreen.storyboard */; };
 		D85B6E5D246C25A5009E0D55 /* ConverterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85B6E5C246C25A5009E0D55 /* ConverterViewController.swift */; };
 		D884F8B9249912EB002FD3A9 /* TranslatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D884F8B8249912EB002FD3A9 /* TranslatorViewController.swift */; };
-		D8A8D80724B84928003467B0 /* WeatherClimat.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A8D80624B84928003467B0 /* WeatherClimat.swift */; };
 		D8A8D80924B85503003467B0 /* CurrencyNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A8D80824B85503003467B0 /* CurrencyNetworkManager.swift */; };
 		D8EC3F3824DB608300616BEF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8EC3F3724DB608300616BEF /* SceneDelegate.swift */; };
 		D8EC3F4824DB691A00616BEF /* TranslateResponseResult.json in Resources */ = {isa = PBXBuildFile; fileRef = D8EC3F4724DB691A00616BEF /* TranslateResponseResult.json */; };
@@ -70,7 +69,6 @@
 		D85B6E56246C22B6009E0D55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D85B6E5C246C25A5009E0D55 /* ConverterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterViewController.swift; sourceTree = "<group>"; };
 		D884F8B8249912EB002FD3A9 /* TranslatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslatorViewController.swift; sourceTree = "<group>"; };
-		D8A8D80624B84928003467B0 /* WeatherClimat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherClimat.swift; sourceTree = "<group>"; };
 		D8A8D80824B85503003467B0 /* CurrencyNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyNetworkManager.swift; sourceTree = "<group>"; };
 		D8EC3F3724DB608300616BEF /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SceneDelegate.swift; path = "../../../../../Library/Mobile Documents/com~apple~CloudDocs/.Trash/SceneDelegate.swift"; sourceTree = "<group>"; };
 		D8EC3F3D24DB689F00616BEF /* GoDreamVoyageTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoDreamVoyageTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,8 +118,6 @@
 			isa = PBXGroup;
 			children = (
 				D84E2D0424A12451008C0025 /* Language.swift */,
-				D84E2D0A24A2CBEC008C0025 /* ConverterCurrency.swift */,
-				D8A8D80624B84928003467B0 /* WeatherClimat.swift */,
 				D84E2D0824A26978008C0025 /* Currency.swift */,
 			);
 			path = DataModel;
@@ -130,6 +126,7 @@
 		D856D2D3248FEF8E00824022 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				D84E2D0A24A2CBEC008C0025 /* ConverterCurrency.swift */,
 				D84E2D0D24AAF396008C0025 /* TranslatorNetworkManager.swift */,
 				D839F79024C6D118005CCD09 /* WeatherNetworkManager.swift */,
 				D8F7C55E2487FD5F007E37C3 /* NetworkManager.swift */,
@@ -334,7 +331,6 @@
 				D8F7C55D2487FD38007E37C3 /* CurrencyResponseResult.swift in Sources */,
 				D84E2D0E24AAF396008C0025 /* TranslatorNetworkManager.swift in Sources */,
 				D839F79124C6D118005CCD09 /* WeatherNetworkManager.swift in Sources */,
-				D8A8D80724B84928003467B0 /* WeatherClimat.swift in Sources */,
 				D85B6E49246C22B4009E0D55 /* AppDelegate.swift in Sources */,
 				D84E2D0524A12451008C0025 /* Language.swift in Sources */,
 				D84E2D0724A12DF7008C0025 /* LanguageListViewController.swift in Sources */,
@@ -438,7 +434,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -492,7 +488,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -551,7 +547,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LV6V24R5F5;
 				INFOPLIST_FILE = GoDreamVoyageTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -572,7 +568,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LV6V24R5F5;
 				INFOPLIST_FILE = GoDreamVoyageTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -19,7 +19,7 @@ class ConverterViewController: BaseViewController {
     @IBOutlet weak var sourceCurrency: UITextField!
     @IBOutlet weak var targetCurrency: UITextField!
     @IBOutlet weak var convertButton: UIButton!
-
+    
     // MARK: IBAction
     
     @IBAction func dismissKeyboard(_ sender: UITapGestureRecognizer) {
