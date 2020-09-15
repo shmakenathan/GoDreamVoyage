@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D80A7B602510426C004C9FBE /* LanguageCurrencyTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80A7B5F2510426C004C9FBE /* LanguageCurrencyTestCase.swift */; };
 		D839F79124C6D118005CCD09 /* WeatherNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D839F79024C6D118005CCD09 /* WeatherNetworkManager.swift */; };
 		D83C126A24CFAECD002071E9 /* UITextToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83C126924CFAECD002071E9 /* UITextToolbar.swift */; };
 		D84E2D0524A12451008C0025 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84E2D0424A12451008C0025 /* Language.swift */; };
@@ -50,6 +51,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D80A7B5F2510426C004C9FBE /* LanguageCurrencyTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageCurrencyTestCase.swift; sourceTree = "<group>"; };
 		D839F79024C6D118005CCD09 /* WeatherNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherNetworkManager.swift; sourceTree = "<group>"; };
 		D83C126924CFAECD002071E9 /* UITextToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextToolbar.swift; sourceTree = "<group>"; };
 		D84E2D0424A12451008C0025 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Language.swift; path = GoDreamVoyage/Model/DataModel/Language.swift; sourceTree = SOURCE_ROOT; };
@@ -207,6 +209,7 @@
 				D8EF2B3824F62CC800FEB65C /* TranslateTestCase.swift */,
 				D8EF2B3A24F62E7400FEB65C /* WeatherTestCase.swift */,
 				D8EF2B3C24F62F1F00FEB65C /* ConverterTestCase.swift */,
+				D80A7B5F2510426C004C9FBE /* LanguageCurrencyTestCase.swift */,
 				D8EC3F4D24E276C200616BEF /* FakeResponseData.swift */,
 				D8EC3F4F24E27A4100616BEF /* URLSessionFake.swift */,
 				D8EC3F4724DB691A00616BEF /* TranslateResponseResult.json */,
@@ -348,6 +351,7 @@
 			files = (
 				D8EF2B3924F62CC800FEB65C /* TranslateTestCase.swift in Sources */,
 				D8EF2B3D24F62F1F00FEB65C /* ConverterTestCase.swift in Sources */,
+				D80A7B602510426C004C9FBE /* LanguageCurrencyTestCase.swift in Sources */,
 				D8EC3F4E24E276C200616BEF /* FakeResponseData.swift in Sources */,
 				D8EC3F5024E27A4100616BEF /* URLSessionFake.swift in Sources */,
 				D8EF2B3B24F62E7400FEB65C /* WeatherTestCase.swift in Sources */,
@@ -441,6 +445,8 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_SUPPRESS_WARNINGS = YES;
+				SWIFT_VERSION = "";
 			};
 			name = Debug;
 		};
@@ -494,6 +500,8 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_SUPPRESS_WARNINGS = YES;
+				SWIFT_VERSION = "";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
