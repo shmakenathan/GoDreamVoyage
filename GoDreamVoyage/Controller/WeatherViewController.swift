@@ -31,6 +31,13 @@ class WeatherViewController: BaseViewController {
         cityLabel[4].text = String(weatherResponse.main.humidity) + "%"
     }
     
+    private func setupNavigationBar() {
+        navigationItem.title = "Weather"
+        
+        let textAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        navigationController?.navigationBar.largeTitleTextAttributes = textAttributes
+    }
+    
     private func loadInformationOfCities() {
         let cities = ["New York", "Paris"]
         changeLoadingIndicatorVisibility(shouldShow: true)
@@ -53,9 +60,13 @@ class WeatherViewController: BaseViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupNavigationBar()
+        
+        
         loadInformationOfCities()
      
     }
     
+   
    
 }

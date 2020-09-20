@@ -23,7 +23,7 @@ class TranslatorViewController: BaseViewController {
     // MARK: IBAction
     
     @IBAction func dismissKeyboard(_ sender: UITapGestureRecognizer) {
-            textToTranslate.resignFirstResponder()
+        textToTranslate.resignFirstResponder()
     }
     
     @IBAction func change(_ sender: UIButton) {
@@ -70,6 +70,8 @@ class TranslatorViewController: BaseViewController {
         convertButtonTranslate.layer.cornerRadius = 10
         sourceLanguage = Language.French
         targetLanguage = Language.English
+        
+        
     }
     
     
